@@ -26,7 +26,7 @@ if(isset($_GET['no_rawat'])) {
 	        $umur          = $row['3'];
 	     }
     } else {
-	     redirect ('pasien-ralan.php');
+	     redirect (URL.'/pasien-ralan.php');
     }
 }
 
