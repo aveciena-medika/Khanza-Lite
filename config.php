@@ -16,22 +16,22 @@ if (preg_match ('/config.php/', basename($_SERVER['PHP_SELF']))) die ('Unable to
 
 define('VERSION', '2.0');
 define('ABSPATH', dirname(__FILE__) . '/');
-define('URL', 'http://localhost/KhanzaLite2');
-define('URLSIMRS', 'http://localhost/KhanzaLite2');
+define('URL', 'https://127.0.0.2');
+define('URLSIMRS', 'https://127.0.0.2');
 define('DIR', '');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'khanzalite');
-define('KODERS', '6307012');
+define('DB_PASS', 'amank1121');
+define('DB_NAME', 'sik');
+define('KODERS', '6303030');
 define('KODEPROP','63prop');
 define('IS_IN_MODULE', true);
 define('FKTL', 'Yes');
 
 
 define('BpjsApiUrl', 'https://new-api.bpjs-kesehatan.go.id:8080/new-vclaim-rest/');
-define('ConsID', '');
-define('SecretKey', '');
+define('ConsID', '2cD2B8034D');
+define('SecretKey', '23178');
 
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -116,7 +116,7 @@ function enumDropdown($table_name, $column_name, $label, $echo = false) {
     $enumList = explode(",", str_replace("'", "", substr($row['COLUMN_TYPE'], 5, (strlen($row['COLUMN_TYPE'])-6))));
 
     foreach($enumList as $value)
-         $selectDropdown .= "<option value=\"$value\">$value</option>";
+        $selectDropdown .= "<option value=\"$value\">$value</option>";
     $selectDropdown .= "</select>";
 
     if ($echo)

@@ -215,4 +215,3 @@ if($page=='add'){
         SSP::simple( $_GET, $sql_details, $table, $primaryKey, $columns )
     );
 }
-?>
