@@ -16,8 +16,9 @@ if (preg_match ('/config.php/', basename($_SERVER['PHP_SELF']))) die ('Unable to
 
 define('VERSION', '2.0');
 define('ABSPATH', dirname(__FILE__) . '/');
-define('URL', 'https://127.0.0.2');
-define('URLSIMRS', 'https://127.0.0.2');
+define('DEVELOPMENT',true);
+define('URL', DEVELOPMENT?'http://khanza-lite.dio:808':'https://rsavm.serveo.net');
+define('URLSIMRS', DEVELOPMENT?'http://khanza-lite.dio:808':'https://rsavm.serveo.net');
 define('DIR', '');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
