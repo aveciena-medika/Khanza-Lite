@@ -51,7 +51,6 @@ $.AdminBSB.leftSideBar = {
         var _this = this;
         var $body = $('body');
         var $overlay = $('.overlay');
-
         //Close sidebar
         $(window).click(function (e) {
             var $target = $(e.target);
@@ -62,7 +61,28 @@ $.AdminBSB.leftSideBar = {
                 $body.removeClass('overlay-open');
             }
         });
-
+        $(window).ready(function(){
+            var status = localStorage.getItem('status');
+            console.log(status)
+        })
+        $('a#sticky').on('click',function () {
+            var $body = $('body');
+            var $openCloseBar = $('.navbar .navbar-header .bars');
+            var status = localStorage.getItem('status');
+            console.log(status)
+            if(typeof status !== "undefined" || status === 'unlocked'){
+                $body.removeClass('ls-closed');
+                $('a#sticky i').text('lock');
+                $openCloseBar.fadeOut();
+                localStorage.setItem('status','locked');
+            }
+            if(status === 'locked'){
+                $body.addClass('ls-closed');
+                $('a#sticky i').text('lock_open');
+                $openCloseBar.fadeIn();
+                localStorage.setItem('status','unlocked');
+            }
+        })
         $.each($('.menu-toggle.toggled'), function (i, val) {
             $(val).next().slideToggle(0);
         });
@@ -99,7 +119,7 @@ $.AdminBSB.leftSideBar = {
         _this.setMenuHeight();
         _this.checkStatuForResize(true);
         $(window).resize(function () {
-            _this.setMenuHeight();
+            // _this.setMenuHeight();
             _this.checkStatuForResize(false);
         });
 
@@ -139,15 +159,21 @@ $.AdminBSB.leftSideBar = {
                 $(this).removeClass('no-animate').dequeue();
             });
         }
-
-        if (width < $.AdminBSB.options.leftSideBar.breakpointWidth) {
-            $body.addClass('ls-closed');
-            $openCloseBar.fadeIn();
+        var status = localStorage.getItem('status')
+        if(status === 'locked') {
+            $('a#sticky i').text('lock_open')
+            return;
         }
-        else {
-            $body.removeClass('ls-closed');
-            $openCloseBar.fadeOut();
-        }
+        $body.addClass('ls-closed');
+        $openCloseBar.fadeIn();
+        // if (width < $.AdminBSB.options.leftSideBar.breakpointWidth) {
+        //     $body.addClass('ls-closed');
+        //     $openCloseBar.fadeIn();
+        // }
+        // else {
+        //     $body.removeClass('ls-closed');
+        //     $openCloseBar.fadeOut();
+        // }
     },
     isOpen: function () {
         return $('body').hasClass('overlay-open');

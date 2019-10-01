@@ -17,6 +17,7 @@
                 }
                 ?>
                 </div>
+                <a href="javascript:void(0);" id="sticky" style="text-decoration: none;color: #ffffff;float: right" class="pin"><i class="material-icons">lock</i></a>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $dataGet['nama']; ?></div>
                     <div class="email"><?php echo $_SESSION['username']; ?> | <?php echo $role; ?> <?php if($_SESSION['jenis_poli'] !== "") { echo ' | ' . $_SESSION['jenis_poli']; } ?> </div>

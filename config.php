@@ -17,12 +17,12 @@ if (preg_match ('/config.php/', basename($_SERVER['PHP_SELF']))) die ('Unable to
 define('VERSION', '2.0');
 define('ABSPATH', dirname(__FILE__) . '/');
 define('DEVELOPMENT',true);
-define('URL', DEVELOPMENT?'http://khanza-lite.dio:808':'https://rsavm.serveo.net');
-define('URLSIMRS', DEVELOPMENT?'http://khanza-lite.dio:808':'https://rsavm.serveo.net');
+define('URL', DEVELOPMENT?'http://khanza-lite.dio':'https://rsavm.serveo.net');
+define('URLSIMRS', DEVELOPMENT?'http://khanza-lite.dio':'https://rsavm.serveo.net');
 define('DIR', '');
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1');
 define('DB_USER', 'root');
-define('DB_PASS', 'amank1121');
+define('DB_PASS', '');
 define('DB_NAME', 'sik');
 define('KODERS', '6303030');
 define('KODEPROP','63prop');

@@ -89,7 +89,7 @@ include_once('layout/sidebar.php');
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left pd0">
                   <div class="card">
                       <div class="header">
-                          <h2>MODUL-MODUL</h2>
+                          <h2>MENU</h2>
                       </div>
                       <div class="setting-con" style="padding:0; height:381px; margin-right: -4px; overflow: hidden;overflow-y:scroll">
                           <div class="container-fluid module">
