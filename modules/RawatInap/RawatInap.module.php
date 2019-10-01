@@ -1,6 +1,5 @@
-<?php if (!defined('IS_IN_MODULE')) die("NO DIRECT FILE ACCESS!");?>
-<?php include_once('includes/breadcrumb.php')?>
-<?php
+<?php if (!defined('IS_IN_MODULE')) die("NO DIRECT FILE ACCESS!");
+
 class RawatInap
 {
     function index()

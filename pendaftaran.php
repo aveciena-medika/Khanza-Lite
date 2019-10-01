@@ -44,7 +44,7 @@ $action = isset($_GET['action'])?$_GET['action']:null;
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <?php echo $title; ?> <div class="right pendaftaran"><?php if(!$action){ ?><button class="btn btn-default waves-effect accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapsePendaftaran"></button><?php } ?></div>
+                                <?php echo $title; ?> <div class="right pendaftaran"><?php if(!$action){ ?><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapsePendaftaran"></a><?php } ?></div>
                                 <small>Periode <?php if(isset($_POST['tgl_awal']) && isset($_POST['tgl_akhir'])) { echo date("d-m-Y",strtotime($_POST['tgl_awal']))." s/d ".date("d-m-Y",strtotime($_POST['tgl_akhir'])); } else { echo date("d-m-Y",strtotime($date)) . ' s/d ' . date("d-m-Y",strtotime($date));} ?></small>
                             </h2>
                         </div>

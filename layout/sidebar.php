@@ -36,7 +36,7 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
+                    <li>
                         <a href="<?php echo URL; ?>/index.php">
                             <i class="material-icons">home</i>
                             <span>Home</span>

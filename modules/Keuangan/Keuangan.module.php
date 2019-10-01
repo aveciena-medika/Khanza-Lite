@@ -1,8 +1,6 @@
 <?php
 if(!defined('IS_IN_MODULE')) die("NO DIRECT FILE ACCESS!");
 
-include('includes/breadcrumb.php');
-
 class Keuangan {
     function index() {
         include_once('menu/main.php');
