@@ -111,9 +111,9 @@ if (HELPER_LIB) {
                                 <div class="row">
                                     <?php
                                     foreach (glob("modules/*/index.php") as $filename):
-                                        include $filename;?>
+                                        include $filename; ?>
                                         <div class="clearfix visible-xs-block"></div>
-                                    <?php endforeach;?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>
@@ -138,10 +138,11 @@ if (HELPER_LIB) {
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <?php
-                    if(isset($_GET['module'])) {
-                        if(file_exists('modules/'.$_GET['module'].'/includes/breadcrumb.php')) {
-                            include('modules/'.$_GET['module'].'/includes/breadcrumb.php');
-                        }
+                    //dynamic load component from folder inlcude
+                    if (isset($_GET['module'])) {
+                        foreach (glob("modules/$_GET[module]/includes/*.php") as $include):
+                            include_once($include);
+                        endforeach;
                     }
                     ?>
                     <div class="card">
