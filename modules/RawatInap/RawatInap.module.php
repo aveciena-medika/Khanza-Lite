@@ -5,7 +5,7 @@ class RawatInap
 {
     function index()
     {
-        include('modules/RawatJalan/pasien.php');
+        include('menu/pasien.php');
     }
 
     function berkas_digital()

@@ -20,14 +20,16 @@ define('DEVELOPMENT',true);
 define('URL', DEVELOPMENT?'http://khanza-lite.dio':'https://rsavm.serveo.net');
 define('URLSIMRS', DEVELOPMENT?'http://khanza-lite.dio':'https://rsavm.serveo.net');
 define('DIR', '');
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', '192.168.100.100');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'amank1121');
 define('DB_NAME', 'sik');
 define('KODERS', '6303030');
 define('KODEPROP','63prop');
 define('IS_IN_MODULE', true);
 define('FKTL', 'Yes');
+define('DB_LIB',true);
+define('HELPER_LIB',true);
 
 
 define('BpjsApiUrl', 'https://new-api.bpjs-kesehatan.go.id:8080/new-vclaim-rest/');

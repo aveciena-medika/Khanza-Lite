@@ -161,7 +161,7 @@ $.AdminBSB.leftSideBar = {
         }
         var status = localStorage.getItem('status')
         if(status === 'locked') {
-            $('a#sticky i').text('lock_open')
+            $('a#sticky i').text('lock')
             return;
         }
         $body.addClass('ls-closed');

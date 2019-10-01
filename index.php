@@ -19,7 +19,13 @@ if(!$getmodule) {
 include_once('config.php');
 include_once('layout/header.php');
 include_once('layout/sidebar.php');
-
+//if you want to use db library
+if(DB_LIB){
+    include_once('library/database.php');
+}
+if(HELPER_LIB){
+    include_once('library/helper.php');
+}
 ?>
 <?php if(!$getmodule) { ?>
     <section class="content">
@@ -152,7 +158,6 @@ include_once('layout/sidebar.php');
 <?php include_once('layout/footer.php'); ?>
 <?php if(!$getmodule) { ?>
     <script>
-
           $(function () {
               new Chart(document.getElementById("bar_chart").getContext("2d"), getChartJs('bar'));
               new Chart(document.getElementById("line_chart").getContext("2d"), getChartJs('line'));

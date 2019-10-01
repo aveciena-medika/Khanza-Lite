@@ -58,6 +58,7 @@
     <script src="<?php echo URL; ?>/assets/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
     <script src="<?php echo URL; ?>/assets/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
     <script src="<?php echo URL; ?>/assets/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+    <script src="<?php echo URL; ?>/assets/plugins/context-menu/contextmenu.min.js"></script>
 
     <!-- Chart Plugins Js -->
     <script src="<?php echo URL; ?>/assets/plugins/chartjs/Chart.bundle.js"></script>
