@@ -54,44 +54,57 @@ $.AdminBSB.leftSideBar = {
         //Close sidebar
         $(window).click(function (e) {
             var $target = $(e.target);
-            if (e.target.nodeName.toLowerCase() === 'i') { $target = $(e.target).parent(); }
+            if (e.target.nodeName.toLowerCase() === 'i') {
+                $target = $(e.target).parent();
+            }
 
             if (!$target.hasClass('bars') && _this.isOpen() && $target.parents('#leftsidebar').length === 0) {
                 if (!$target.hasClass('js-right-sidebar')) $overlay.fadeOut();
                 $body.removeClass('overlay-open');
             }
         });
-        $(window).ready(function(){
+        $(window).ready(function () {
             var status = localStorage.getItem('status');
             console.log(status)
         })
-        $('a#sticky').on('click',function () {
+        $('a#sticky').on('click', function () {
             var $body = $('body');
             var $openCloseBar = $('.navbar .navbar-header .bars');
             var status = localStorage.getItem('status');
             console.log(status)
-            if(typeof status !== "undefined" || status === 'unlocked'){
+            if (typeof status !== "undefined" || status === 'unlocked') {
                 $body.removeClass('ls-closed');
                 $('a#sticky i').text('lock');
                 $openCloseBar.fadeOut();
-                localStorage.setItem('status','locked');
+                localStorage.setItem('status', 'locked');
             }
-            if(status === 'locked'){
+            if (status === 'locked') {
                 $body.addClass('ls-closed');
                 $('a#sticky i').text('lock_open');
                 $openCloseBar.fadeIn();
-                localStorage.setItem('status','unlocked');
+                localStorage.setItem('status', 'unlocked');
             }
         })
         $.each($('.menu-toggle.toggled'), function (i, val) {
             $(val).next().slideToggle(0);
         });
 
+        if (location.search !== "") {
+            console.log(location.search.split("="));
+            var isModule = location.search.split("=");
+
+            // $('#list-module-menu li a[href*="'+location.search+'"]').parent().addClass("active");
+            $('#list-module-menu li a[href*="'+location.search+'"]').parents("li").addClass("active");
+
+        }
+        // $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+
         //When page load
         $.each($('.menu .list li.active'), function (i, val) {
             var $activeAnchors = $(val).find('a:eq(0)');
 
             $activeAnchors.addClass('toggled');
+
             $activeAnchors.next().show();
         });
 
@@ -144,8 +157,8 @@ $.AdminBSB.leftSideBar = {
 
             //Scroll active menu item when page load, if option set = true
             if ($.AdminBSB.options.leftSideBar.scrollActiveItemWhenPageLoad) {
-                var activeItemOffsetTop = $('.menu .list li.active')[0].offsetTop
-                if (activeItemOffsetTop > 150) $el.slimscroll({ scrollTo: activeItemOffsetTop + 'px' });
+                var activeItemOffsetTop = $('.menu .list li.active')[0].offsetTop;
+                if (activeItemOffsetTop > 150) $el.slimscroll({scrollTo: activeItemOffsetTop + 'px'});
             }
         }
     },
@@ -160,20 +173,19 @@ $.AdminBSB.leftSideBar = {
             });
         }
         var status = localStorage.getItem('status');
-        if(status === 'locked') {
+        if (status === 'locked') {
             $('a#sticky i').text('lock');
             return;
         }
-        if(!$body.hasClass('ls-closed')){
+        if (!$body.hasClass('ls-closed')) {
             $body.addClass('ls-closed');
             $openCloseBar.fadeIn();
         }
         if (width < $.AdminBSB.options.leftSideBar.breakpointWidth) {
-            localStorage.setItem('status','unlocked');
+            localStorage.setItem('status', 'unlocked');
             $body.addClass('ls-closed');
             $openCloseBar.fadeIn();
-        }
-        else {
+        } else {
             $body.removeClass('ls-closed');
             $openCloseBar.fadeOut();
         }
@@ -197,7 +209,9 @@ $.AdminBSB.rightSideBar = {
         //Close sidebar
         $(window).click(function (e) {
             var $target = $(e.target);
-            if (e.target.nodeName.toLowerCase() === 'i') { $target = $(e.target).parent(); }
+            if (e.target.nodeName.toLowerCase() === 'i') {
+                $target = $(e.target).parent();
+            }
 
             if (!$target.hasClass('js-right-sidebar') && _this.isOpen() && $target.parents('#rightsidebar').length === 0) {
                 if (!$target.hasClass('bars')) $overlay.fadeOut();
@@ -207,7 +221,11 @@ $.AdminBSB.rightSideBar = {
 
         $('.js-right-sidebar').on('click', function () {
             $sidebar.toggleClass('open');
-            if (_this.isOpen()) { $overlay.fadeIn(); } else { $overlay.fadeOut(); }
+            if (_this.isOpen()) {
+                $overlay.fadeIn();
+            } else {
+                $overlay.fadeOut();
+            }
         });
     },
     isOpen: function () {
@@ -265,7 +283,11 @@ $.AdminBSB.navbar = {
         //Open left sidebar panel
         $('.bars').on('click', function () {
             $body.toggleClass('overlay-open');
-            if ($body.hasClass('overlay-open')) { $overlay.fadeIn(); } else { $overlay.fadeOut(); }
+            if ($body.hasClass('overlay-open')) {
+                $overlay.fadeIn();
+            } else {
+                $overlay.fadeOut();
+            }
         });
 
         //Close collapse bar on click event
@@ -298,9 +320,10 @@ $.AdminBSB.input = {
         $('.form-control').focusout(function () {
             var $this = $(this);
             if ($this.parents('.form-group').hasClass('form-float')) {
-                if ($this.val() == '') { $this.parents('.form-line').removeClass('focused'); }
-            }
-            else {
+                if ($this.val() == '') {
+                    $this.parents('.form-line').removeClass('focused');
+                }
+            } else {
                 $this.parents('.form-line').removeClass('focused');
             }
         });
@@ -326,7 +349,9 @@ $.AdminBSB.input = {
 */
 $.AdminBSB.select = {
     activate: function () {
-        if ($.fn.selectpicker) { $('select:not(.ms)').selectpicker(); }
+        if ($.fn.selectpicker) {
+            $('select:not(.ms)').selectpicker();
+        }
     }
 }
 //==========================================================================================================================
@@ -348,7 +373,8 @@ $.AdminBSB.dropdownMenu = {
             "shown.bs.dropdown": function () {
                 var dropdown = _this.dropdownEffect(this);
                 if (dropdown.effectIn && dropdown.effectOut) {
-                    _this.dropdownEffectEnd(dropdown, function () { });
+                    _this.dropdownEffectEnd(dropdown, function () {
+                    });
                 }
             },
             "hide.bs.dropdown": function (e) {
@@ -374,8 +400,12 @@ $.AdminBSB.dropdownMenu = {
         if (dropdown.length > 0) {
             var udEffectIn = dropdown.data('effect-in');
             var udEffectOut = dropdown.data('effect-out');
-            if (udEffectIn !== undefined) { effectIn = udEffectIn; }
-            if (udEffectOut !== undefined) { effectOut = udEffectOut; }
+            if (udEffectIn !== undefined) {
+                effectIn = udEffectIn;
+            }
+            if (udEffectOut !== undefined) {
+                effectOut = udEffectOut;
+            }
         }
 
         return {
@@ -483,5 +513,7 @@ $(function () {
     $.AdminBSB.select.activate();
     $.AdminBSB.search.activate();
 
-    setTimeout(function () { $('.page-loader-wrapper').fadeOut(); }, 50);
+    setTimeout(function () {
+        $('.page-loader-wrapper').fadeOut();
+    }, 50);
 });

@@ -29,20 +29,23 @@ include_once('init.php');
     <link href="<?php echo URL; ?>/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="<?php echo URL; ?>/assets/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>/assets/plugins/node-waves/waves.css" rel="stylesheet"/>
 
     <!-- Animation Css -->
-    <link href="<?php echo URL; ?>/assets/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>/assets/plugins/animate-css/animate.css" rel="stylesheet"/>
 
     <!-- JQuery DataTable Css -->
-    <link href="<?php echo URL; ?>/assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>/assets/plugins/jquery-datatable/extensions/responsive/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>/assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css"
+          rel="stylesheet">
+    <link href="<?php echo URL; ?>/assets/plugins/jquery-datatable/extensions/responsive/css/responsive.dataTables.min.css"
+          rel="stylesheet">
 
     <!-- Bootstrap Material Datetime Picker Css -->
-    <link href="<?php echo URL; ?>/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+          rel="stylesheet"/>
 
     <!-- Bootstrap Select Css -->
-    <link href="<?php echo URL; ?>/assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>/assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet"/>
 
     <!-- Jquery-UI Css -->
     <link href="<?php echo URL; ?>/assets/css/jquery-ui.min.css" rel="stylesheet">
@@ -55,34 +58,43 @@ include_once('init.php');
     <link href="<?php echo URL; ?>/assets/css/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="<?php echo URL; ?>/assets/css/themes/all-themes.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>/assets/css/themes/all-themes.css" rel="stylesheet"/>
 
 </head>
 
 <body class="theme-indigo">
-    <!-- Page Loader -->
-    <!-- #END# Page Loader -->
-    <!-- Overlay For Sidebars -->
-    <div class="overlay"></div>
-    <!-- #END# Overlay For Sidebars -->
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <div class="search-icon">
-            <i class="material-icons">search</i>
+<!-- Page Loader -->
+<!-- #END# Page Loader -->
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars -->
+<!-- Search Bar -->
+<div class="search-bar">
+    <div class="search-icon">
+        <i class="material-icons">search</i>
+    </div>
+    <input type="text" placeholder="CARI MENU...">
+    <div class="close-search">
+        <i class="material-icons">close</i>
+    </div>
+</div>
+<!-- #END# Search Bar -->
+<!-- Top Bar -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="javascript:void(0);" class="bars"></a>
+            <a class="navbar-brand"
+               href="<?php echo URL; ?>/index.php"><?php echo $dataSettings['nama_instansi']; ?></a>
         </div>
-        <input type="text" placeholder="START TYPING...">
-        <div class="close-search">
-            <i class="material-icons">close</i>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Call Search -->
+                <li><a href="javascript:void(0);" class="js-search" data-close="true"><i
+                                class="material-icons">search</i></a></li>
+                <!-- #END# Call Search -->
+            </ul>
         </div>
     </div>
-    <!-- #END# Search Bar -->
-    <!-- Top Bar -->
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="<?php echo URL; ?>/index.php"><?php echo $dataSettings['nama_instansi']; ?></a>
-            </div>
-        </div>
-    </nav>
-    <!-- #Top Bar -->
+</nav>
+<!-- #Top Bar -->

@@ -52,11 +52,9 @@
                         <i class="material-icons">view_module</i>
                         <span>Module</span>
                     </a>
-                    <ul class="ml-menu">
-                        <?php foreach (glob('modules/*', GLOB_ONLYDIR) as $dir): ?>
-                            <li>
-                                <a href="<?php echo URL."?module=".explode('/',$dir)[1] ?>"><?php echo explode('/',$dir)[1] ?></a>
-                            </li>
+                    <ul id="list-module-menu" class="ml-menu">
+                        <?php foreach (glob('modules/*/index-menu.php') as $menu): ?>
+                            <?php include_once $menu?>
                         <?php endforeach; ?>
                     </ul>
 

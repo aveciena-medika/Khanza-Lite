@@ -140,7 +140,7 @@ if (HELPER_LIB) {
                     <?php
                     //dynamic load component from folder inlcude
                     if (isset($_GET['module'])) {
-                        foreach (glob("modules/$_GET[module]/includes/*.php") as $include):
+                        foreach (glob("modules/$_GET[module]/components/*.php") as $include):
                             include_once($include);
                         endforeach;
                     }
