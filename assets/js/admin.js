@@ -153,27 +153,30 @@ $.AdminBSB.leftSideBar = {
         var $body = $('body');
         var $openCloseBar = $('.navbar .navbar-header .bars');
         var width = $body.width();
-
+        console.log(width);
         if (firstTime) {
             $body.find('.content, .sidebar').addClass('no-animate').delay(1000).queue(function () {
                 $(this).removeClass('no-animate').dequeue();
             });
         }
-        var status = localStorage.getItem('status')
+        var status = localStorage.getItem('status');
         if(status === 'locked') {
-            $('a#sticky i').text('lock')
+            $('a#sticky i').text('lock');
             return;
         }
-        $body.addClass('ls-closed');
-        $openCloseBar.fadeIn();
-        // if (width < $.AdminBSB.options.leftSideBar.breakpointWidth) {
-        //     $body.addClass('ls-closed');
-        //     $openCloseBar.fadeIn();
-        // }
-        // else {
-        //     $body.removeClass('ls-closed');
-        //     $openCloseBar.fadeOut();
-        // }
+        if(!$body.hasClass('ls-closed')){
+            $body.addClass('ls-closed');
+            $openCloseBar.fadeIn();
+        }
+        if (width < $.AdminBSB.options.leftSideBar.breakpointWidth) {
+            localStorage.setItem('status','unlocked');
+            $body.addClass('ls-closed');
+            $openCloseBar.fadeIn();
+        }
+        else {
+            $body.removeClass('ls-closed');
+            $openCloseBar.fadeOut();
+        }
     },
     isOpen: function () {
         return $('body').hasClass('overlay-open');
