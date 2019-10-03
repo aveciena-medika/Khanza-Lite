@@ -33,8 +33,8 @@ define('HELPER_LIB',true);
 
 
 define('BpjsApiUrl', 'https://new-api.bpjs-kesehatan.go.id:8080/new-vclaim-rest/');
-define('ConsID', '2cD2B8034D');
-define('SecretKey', '23178');
+define('ConsID', '');
+define('SecretKey', '');
 
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
