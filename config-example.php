@@ -11,21 +11,21 @@
 * Description : Main config, function and helper
 * Licence under GPL
 ***/
-
+header("Access-Control-Allow-Origin: *");
 if (preg_match ('/config.php/', basename($_SERVER['PHP_SELF']))) die ('Unable to access this script directly from browser!');
 
 define('VERSION', '2.0');
 define('ABSPATH', dirname(__FILE__) . '/');
-define('DEVELOPMENT',true);
-define('URL', DEVELOPMENT?'http://khanza-lite.dio':'https://rsavm.serveo.net');
-define('URLSIMRS', DEVELOPMENT?'http://khanza-lite.dio':'https://rsavm.serveo.net');
+define('DEVELOPMENT',false);
+define('URL', DEVELOPMENT?'YOUR LOCAL URL':'YOUR DOMAIN OR SUB DOMAIN');
+define('URLSIMRS', DEVELOPMENT?'YOUR LOCAL URL':'YOUR DOMAIN OR SUB DOMAIN');
 define('DIR', '');
-define('DB_HOST', '192.168.100.100');
-define('DB_USER', 'root');
-define('DB_PASS', 'amank1121');
-define('DB_NAME', 'sik');
-define('KODERS', '6303030');
-define('KODEPROP','63prop');
+define('DB_HOST', 'YOUR DB HOST');
+define('DB_USER', 'USERNAME');
+define('DB_PASS', 'PASSWORD');
+define('DB_NAME', 'NAMA DATABASE');
+define('KODERS', '');
+define('KODEPROP','');
 define('IS_IN_MODULE', true);
 define('FKTL', 'Yes');
 define('DB_LIB',true);
